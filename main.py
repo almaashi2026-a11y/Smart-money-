@@ -17,4 +17,3 @@ for ticker in stocks[:5]:
     rvol = calculate_rvol(ticker)
     if rvol > 2.0:
         send_telegram(f"🚀 تنبيه سيولة: {ticker} | RVOL الحالي: {rvol:.2f}")
-        
