@@ -1,6 +1,6 @@
 # إعدادات البوت والبيانات الحساسة
-TOKEN = '8757409287:AAGbCqnG8dEb2fxX9zodc7_QPLiil9MY1Rw'
-CHAT_ID = '8757409287' ID الخاص بك
+TOKEN = '8524780143:AAGbCqnG8dEb2fxX9zodc7_QPLiil9MY1Rw'
+CHAT_ID = '8524780143' 
 
 # إعدادات الفلترة العامة
 MIN_PRICE = 0.20
