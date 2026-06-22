@@ -7,13 +7,14 @@ def send_telegram(msg):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
     requests.post(url, data={'chat_id': CHAT_ID, 'text': msg})
 
-# فلترة الأسهم البيني
+# فلترة الأسهم - نستخدم طريقة مبسطة لتجنب الأخطاء
 foverview = Overview()
-foverview.set_filter(price_lt='10', volume_gt='500k')
+foverview.set_filter(price='Under $10') 
 stocks = foverview.screener_view()['Ticker'].tolist()
 
-for ticker in stocks[:10]: # فحص أول 10 أسهم كمثال
+# فحص أول 5 أسهم لتجنب الضغط على الخادم
+for ticker in stocks[:5]: 
     rvol = calculate_rvol(ticker)
-    if rvol > 2.5:
-        send_telegram(f"فرصة قوية: {ticker} | RVOL: {rvol:.2f}")
-      
+    if rvol > 2.0:
+        send_telegram(f"🚀 تنبيه سيولة: {ticker} | RVOL الحالي: {rvol:.2f}")
+        
